@@ -22,6 +22,13 @@ DBD += opcuaIoc.dbd
 # opcuaIoc.dbd will be made up from these files:
 opcuaIoc_DBD += base.dbd
 
+ifdef BASE_7_0
+opcuaIoc_DBD += PVAServerRegister.dbd
+opcuaIoc_DBD += qsrv.dbd
+opcuaIoc_LIBS += qsrv
+opcuaIoc_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
+endif
+
 # Include dbd files from all support applications:
 opcuaIoc_DBD += opcua.dbd
 
