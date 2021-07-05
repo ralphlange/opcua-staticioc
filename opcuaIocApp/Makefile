@@ -33,7 +33,8 @@ endif
 opcuaIoc_DBD += opcua.dbd
 
 # Add all the support libraries needed by this IOC
-opcuaIoc_LIBS += opcua
+opcuaIoc_LIBS += opcua $(UASDK_LIBS)
+opcuaIoc_SYS_LIBS_Linux += $(UASDK_SYS_LIBS_Linux)
 
 # opcuaIoc_registerRecordDeviceDriver.cpp derives from opcuaIoc.dbd
 opcuaIoc_SRCS += opcuaIoc_registerRecordDeviceDriver.cpp
